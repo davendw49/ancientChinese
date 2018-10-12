@@ -11,7 +11,7 @@ def insert(img_id, chinese, book_num, img_addr):
 	# 使用cursor()方法获取操作游标 
 	cursor = db.cursor()
 	# SQL 插入语句
-	sql = "INSERT INTO sample(img_id, chinese, book_num, img_addr) VALUES ('%s','%s','%s','%s')" % (img_id, chinese, book_num, img_addr)
+	sql = "INSERT INTO sample1(img_id, chinese, book_num, img_addr) VALUES ('%s','%s','%s','%s')" % (img_id, chinese, book_num, img_addr)
 	print sql
 	try:
 	# 执行sql语句
@@ -33,7 +33,7 @@ def insert_book(this_id, this_book):
 	# 使用cursor()方法获取操作游标 
 	cursor = db.cursor()
 	# SQL 插入语句
-	sql = "INSERT INTO book(this_id, this_book) VALUES ('%s','%s')" % (this_id, this_book)
+	sql = "INSERT INTO book1(this_id, this_book) VALUES ('%s','%s')" % (this_id, this_book)
 	print sql
 	try:
 	# 执行sql语句
@@ -50,14 +50,14 @@ def insert_book(this_id, this_book):
 
 
 
-soup = BeautifulSoup(open('/Users/daven/Github/ancientChinese/test.html'), features="html.parser")
+soup = BeautifulSoup(open('/Users/daven/Github/ancientChinese/sample.html'), features="html.parser")
 soup.prettify('utf-8')
 
-file = codecs.open("/Users/daven/Github/ancientChinese/testsoup.html", "w")
+file = codecs.open("/Users/daven/Github/ancientChinese/samplesoup.html", "w")
 
 print >> file, soup
 
-file = codecs.open("/Users/daven/Github/ancientChinese/testsoup.html", "r", "utf-8")
+file = codecs.open("/Users/daven/Github/ancientChinese/samplesoup.html", "r", "utf-8")
 
 collection = []
 sum=0
