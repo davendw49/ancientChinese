@@ -1,7 +1,7 @@
 from docx2html import convert
 
-f = open('/Users/daven/Github/ancientChinese/sample.html', 'w') 
-html = convert('/Users/daven/Github/ancientChinese/sample.docx')
+f = open('sample.html', 'w') 
+html = convert('sample.docx')
 print >> f,html
 
 f.close()
