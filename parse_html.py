@@ -53,13 +53,15 @@ def bs4module(file):
 		
 	
 	for item in soup.find_all('img'):
-		img_set.append(item)
+		img_set.append(item['src'])
 	
 	print len(chinese_set),len(img_set),len(book_set)
 
-bs4module('sample.html')
+bs4module('sample.html') 
 if (len(chinese_set)==len(img_set) and len(img_set)==len(book_set)):
 	print "pass 1st step"
+	for i in range(0,len(chinese_set)):
+ 		insert(i+1, chinese_set[i], book_set[i], img_set[i], "sample")
 
-#for i in range(0,len(chinese_set)):
-# 	insert(i+1, chinese_set[i], book_set[i], img_set[i], "sample")
+else:
+	print "error"

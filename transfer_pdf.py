@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
 import pdfkit
+import sys
 
+reload(sys);
+sys.setdefaultencoding("utf8")
 options = {
     'page-size': 'Letter',
     'margin-top': '0.75in',
@@ -14,4 +18,4 @@ options = {
 }
 
 
-pdfkit.from_file('sample_img.html','out.pdf', options = options)
+pdfkit.from_file(sys.argv[1],sys.argv[2], options = options)
