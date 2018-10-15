@@ -74,6 +74,12 @@ python transfer_pdf.py file/relational/path.html file/relational/path.pdf
 *html文件的位置和命名须与上一步相同*
 
 
+## 结果展示
+### 一开始的样子
+![at first](http://dclegend.xyz/ancientChinese/first.png)
+### 后来的样子
+![at last](http://dclegend.xyz/ancientChinese/second.png)
+
 ## 写在最后的话
 部分代码如果出现`bug`需联系作者协商提供解决方案。
 在运行的过程中一旦不注意输入错误，需要重头开始运行。
