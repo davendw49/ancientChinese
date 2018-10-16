@@ -85,3 +85,15 @@ python transfer_pdf.py file/relational/path.html file/relational/path.pdf
 在运行的过程中一旦不注意输入错误，需要重头开始运行。
 还有待进一步的开发，请大家多多包涵……Y(^_^)Y
 
+## Windows情况
+对于湖南大学岳麓书院的那两位老哥：
+
+* 第一步肯定是要进入到代码目录的：
+  1. 老丁: `win+R` -> `cd ancientChinese` 即可；
+  2. 学弟: `win+X` -> `选择Windows PowerShell` -> `cd c:/ancientChinese/` 即可。
+* 如果需要更新：在该目录下输入`git pull`
+* 文档的注意事项：
+  1. 文段不得以文字结尾，如：
+  ![cn](http://dclegend.xyz/ancientChinese/last_is_cn.png)
+  2. 不可以连续出现两张图片，如：
+  ![image](http://dclegend.xyz/ancientChinese/double_image.png)
