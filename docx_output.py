@@ -74,8 +74,9 @@ def word_output(word_file):
 		result = query(charI, "sample")
 		p = document.add_paragraph()
 		for rs in result:
-			run = p.add_run(str(rs[2]))
+			run = p.add_run()
 			run.add_picture(str(rs[3])[7:])
+			run.add_text(str(rs[2]))
 			run.add_text(';')
 		if nowpace==pace:
 			nowpercant+=1
