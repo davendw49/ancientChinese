@@ -12,7 +12,22 @@ if os.path.exists('image'):
 	shutil.rmtree('image')
 if os.path.exists('word'):
 	shutil.rmtree('word')
-os.mkdir('image')
+if os.path.exists('docProps'):
+	shutil.rmtree('docProps')
+if os.path.exists('_rels'):
+	shutil.rmtree('_rels')
+if os.path.exists('customXml'):
+	shutil.rmtree('customXml')
+if os.path.exists('[Content_Types].xml'):
+	os.unlink('[Content_Types].xml')
+if os.path.exists('undergo.ZIP'):
+	os.unlink('undergo.ZIP')
+if os.path.exists('sample.html'):
+	os.unlink('sample.html')
+if os.path.exists('parse_html.pyc'):
+	os.unlink('parse_html.pyc')
+
+
 
 # 打开数据库连接
 db = MySQLdb.connect("localhost", "root", "kellydc", "ancientChinese", charset='utf8' )

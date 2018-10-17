@@ -75,7 +75,7 @@ def word_output(word_file):
 		p = document.add_paragraph()
 		for rs in result:
 			run = p.add_run()
-			run.add_picture(str(rs[3])[7:])
+			run.add_picture(str(rs[3]))
 			run.add_text(str(rs[2]))
 			run.add_text(';')
 		if nowpace==pace:
@@ -84,12 +84,16 @@ def word_output(word_file):
 			nowpace = 0
 	document.save(word_file)  #可以设置其他路径
 
-
-if sys.argv[1]=="docx":
-	word_output(sys.argv[2])
-elif sys.argv[1]=="html":
-	html_output(sys.argv[2])
-
+if parse_html.situation==0:
+	if sys.argv[1]=="docx":
+		word_output(sys.argv[2])
+	elif sys.argv[1]=="html":
+		html_output(sys.argv[2])
+	print "done"
+elif parse_html.situation==1:
+	print "chinese less"
+else:
+	print "img less"
 
 
 

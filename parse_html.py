@@ -10,13 +10,17 @@ sys.setdefaultencoding("utf8")
 
 chinese_set = []
 img_set = []
+img_h_set = []
+img_w_set = []
 book_set = []
-def insert(img_id, chinese, book_num, img_addr, table_name):
+situation = 0
+
+def insert(img_id, chinese, book_num, img_addr, table_name, img_h, img_w):
 	db = MySQLdb.connect("localhost", "root", "kellydc", "ancientChinese", charset='utf8' )
 	# 使用cursor()方法获取操作游标 
 	cursor = db.cursor()
 	# SQL 插入语句
-	sql = "INSERT INTO %s(img_id, chinese, book_num, img_addr) VALUES ('%s','%s','%s','%s')" % (table_name, img_id, chinese, book_num, img_addr)
+	sql = "INSERT INTO %s(img_id, chinese, book_num, img_addr, img_h, img_w) VALUES ('%s','%s','%s','%s','%s','%s')" % (table_name, img_id, chinese, book_num, img_addr, img_h, img_w)
 	print sql
 	try:
 	# 执行sql语句
@@ -53,7 +57,9 @@ def bs4module(file):
 		
 	
 	for item in soup.find_all('img'):
-		img_set.append(item['src'])
+		img_set.append(item['src'].replace("data/word/media/","image/"))
+		img_h_set.append(item['height'])
+		img_w_set.append(item['width'])
 	
 	print len(chinese_set),len(img_set),len(book_set)
 
@@ -61,7 +67,11 @@ bs4module('sample.html')
 if (len(chinese_set)==len(img_set) and len(img_set)==len(book_set)):
 	print "pass 1st step"
 	for i in range(0,len(chinese_set)):
- 		insert(i+1, chinese_set[i], book_set[i], img_set[i], "sample")
+ 		insert(i+1, chinese_set[i], book_set[i], img_set[i], "sample", img_h_set[i], img_w_set[i])
 
 else:
+	if len(chinese_set)<len(img_set):
+		situation=1
+	else:
+		situation=2
 	print "error"
