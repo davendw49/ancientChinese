@@ -76,9 +76,9 @@ python transfer_pdf.py file/relational/path.html file/relational/path.pdf
 
 ## 结果展示
 ### 一开始的样子
-![at first](http://dclegend.xyz/ancientChinese/first.png)
+![at first](http://dclegend.xyz/download/ac/first.png)
 ### 后来的样子
-![at last](http://dclegend.xyz/ancientChinese/second.png)
+![at last](http://dclegend.xyz/download/ac/second.png)
 
 ## 写在最后的话
 部分代码如果出现`bug`需联系作者协商提供解决方案。
@@ -94,6 +94,6 @@ python transfer_pdf.py file/relational/path.html file/relational/path.pdf
 * 如果需要更新：在该目录下输入`git pull`
 * 文档的注意事项：
   1. 文段不得以文字结尾，如：
-  ![cn](http://dclegend.xyz/ancientChinese/last_is_cn.png)
+  ![cn](http://dclegend.xyz/download/ac/last_is_cn.png)
   2. 不可以连续出现两张图片，如：
-  ![image](http://dclegend.xyz/ancientChinese/double_image.png)
+  ![image](http://dclegend.xyz/download/ac/double_image.png)
